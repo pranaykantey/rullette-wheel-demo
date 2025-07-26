@@ -1,47 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Roulette Wheel with Multiple Selection and Editable History</title>
   <link rel="stylesheet" href="css/wheel.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
+  <header class="header-area">
+    <div class="container">
+      <h2>Roulette Wheel with Multiple Selection and Editable History</h2>
+      <p>
+        Click wheel segments to toggle selection (yellow border). Toggle "Add to
+        History" mode to add numbers to history.
+      </p>
+      <p><strong>Double-click any number in history to remove it.</strong></p>
+      <a href="#wheel-container" class="button">Start Now</a>
+    </div>
+  </header>
 
-<header class="header-area">
-  <h2>Roulette Wheel with Multiple Selection and Editable History</h2>
-  <p>Click wheel segments to toggle selection (yellow border). Toggle "Add to History" mode to add numbers to history.</p>
-  <p><strong>Double-click any number in history to remove it.</strong></p>
-</header>
+  <section id="main-area" class="main-area">
+    <div class="container">
+      <div class="row">
+        <div class="main-left" id="main-left">
+          <div id="wheel-container">
+            <canvas id="wheel" width="580" height="580" aria-label="Roulette wheel"></canvas>
+          </div>
+        </div>
+        <div class="main-right">
 
-<canvas id="wheel" width="580" height="580" aria-label="Roulette wheel"></canvas>
+          <div class="sidebar-area">
+            <div class="sidebar-left">
 
-<div id="controls" role="region" aria-label="Roulette controls">
-  <button id="addHistoryToggle" title="Toggle Add to History Mode" aria-pressed="false">
-    <span id="addHistoryIcon"></span>
-    Add to History: Off
-  </button>
-  <button id="resetSelectionBtn" title="Clear all segment selections">
-    Reset Selection
-  </button>
-  <button id="clearHistoryBtn" title="Clear history">
-    Clear History
-  </button>
-</div>
+              <div id="controls" role="region" aria-label="Roulette controls">
+                <button id="resetSelectionBtn" title="Clear all segment selections">
+                  Reset Wheel
+                </button>
+                <button id="addHistoryToggle" title="Toggle Add to History Mode" aria-pressed="false">
+                  <span id="addHistoryIcon"></span>
+                  Won Number
+                </button>
+                <button id="clearHistoryBtn" title="Clear history">
+                  Clean History
+                </button>
+              </div>
+            </div>
+            <div class="sidebar-right">
+              <div id="historyContainer" style="display: none" aria-label="History list">
+                <h3 id="historyTitle">History (Double-click numbers to remove)</h3>
+                <div id="historyList" role="list"></div>
+              </div>
 
-<div id="legend" aria-label="Roulette sectors legend">
-  <div class="legend-item"><div class="color-box" style="background:#3c8dbc;"></div>Voisins du Zéro (Neighbors of Zero)</div>
-  <div class="legend-item"><div class="color-box" style="background:#d9534f;"></div>Tiers du Cylindre (Third of the Wheel)</div>
-  <div class="legend-item"><div class="color-box" style="background:#f0ad4e;"></div>Orphelins (Orphans)</div>
-  <div class="legend-item"><div class="color-box" style="background:#5cb85c;"></div>Jeu Zero (Zero Game)</div>
-  <div class="legend-item"><div class="color-box" style="background:#27ae60;"></div>Zero (0)</div>
-</div>
+              <div id="legend" aria-label="Roulette sectors legend">
+                <div class="legend-item">
+                  <div class="color-box" style="background: #3c8dbc"></div>
+                  Voisins du Zéro (Neighbors of Zero)
+                </div>
+                <div class="legend-item">
+                  <div class="color-box" style="background: #d9534f"></div>
+                  Tiers du Cylindre (Third of the Wheel)
+                </div>
+                <div class="legend-item">
+                  <div class="color-box" style="background: #f0ad4e"></div>
+                  Orphelins (Orphans)
+                </div>
+                <div class="legend-item">
+                  <div class="color-box" style="background: #5cb85c"></div>
+                  Jeu Zero (Zero Game)
+                </div>
+                <div class="legend-item">
+                  <div class="color-box" style="background: #27ae60"></div>
+                  Zero (0)
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<div id="historyContainer" style="display:none;" aria-label="History list">
-  <h3 id="historyTitle">History (Double-click numbers to remove)</h3>
-  <div id="historyList" role="list"></div>
-</div>
-
-<script src="js/roulette.js"></script>
+  <script src="js/roulette.js"></script>
 </body>
+
 </html>

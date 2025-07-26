@@ -134,8 +134,8 @@
           const endAngle = startAngle + anglePerSegment;
           ctx.beginPath();
           ctx.arc(centerX, centerY, radius, startAngle, endAngle);
-          ctx.strokeStyle = 'yellow';
-          ctx.lineWidth = 6;
+          ctx.strokeStyle = 'aqua';
+          ctx.lineWidth = 60;
           ctx.stroke();
         }
       }
@@ -157,7 +157,7 @@
           const dist = Math.sqrt(dx * dx + dy * dy);
           const ux = dx / dist;
           const uy = dy / dist;
-          const iconDistance = 18 + iconRadius + 4;
+          const iconDistance = 240 + iconRadius + 4;
           const iconX = centerX + ux * iconDistance;
           const iconY = centerY + uy * iconDistance;
 
@@ -218,7 +218,7 @@
       const iconSpan = document.createElement('span');
       iconSpan.id = 'addHistoryIcon';
       addHistoryToggleBtn.appendChild(iconSpan);
-      addHistoryToggleBtn.appendChild(document.createTextNode(isAddHistoryMode ? 'Add to History: On' : 'Add to History: Off'));
+      addHistoryToggleBtn.appendChild(document.createTextNode(isAddHistoryMode ? 'History Add: On' : 'History Add: Off'));
       addHistoryToggleBtn.setAttribute('aria-pressed', isAddHistoryMode.toString());
     });
 
